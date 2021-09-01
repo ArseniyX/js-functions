@@ -27,5 +27,15 @@ const isNameTheSame = (obj, obj2) => obj.firstName === obj2.firstName
 console.log(7, isNameTheSame({firstName: "Arseniy"}, {firstName: "Arseniy"}))
 
 // 8. return function
-const returnFunc = (obj1) => () => obj1.firstName
+// Arrow function
+const returnArrowFunc = (obj1) => () => obj1.firstName
+console.log(8, returnArrowFunc({ firstName: "Arseniy" })());
+
+// Normal function
+function returnFunc(obj1) {
+    return function () {
+        return obj1.firstName
+    }
+}
+
 console.log(8, returnFunc({ firstName: "Arseniy" })());
